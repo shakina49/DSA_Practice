@@ -1,10 +1,20 @@
+import java.util.Scanner;
+
 public class ReverseArray {
     public static void main(String[] args) {
-        // Original array
-        int[] arr = {1, 2, 3, 4, 5};
+        Scanner sc = new Scanner(System.in);
 
-        // Reverse the array using two pointers
-        int i = 0, j = arr.length - 1;
+        System.out.print("Enter size of array: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Reverse
+        int i = 0, j = n - 1;
         while (i < j) {
             int temp = arr[i];
             arr[i] = arr[j];
@@ -13,7 +23,6 @@ public class ReverseArray {
             j--;
         }
 
-        // Print reversed array
         System.out.print("Reversed array: ");
         for (int num : arr) {
             System.out.print(num + " ");
