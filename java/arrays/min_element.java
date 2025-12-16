@@ -1,20 +1,23 @@
+import java.util.Scanner;
+
 public class MinElement {
     public static void main(String[] args) {
-        int[] arr = {3, 7, 1, 9, 4};
+        Scanner sc = new Scanner(System.in);
 
-        if (arr.length == 0) {
-            System.out.println("Array is empty!");
-            return;
+        System.out.print("Enter size of array: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
         }
 
-        int min = arr[0]; // assume first element is min
-
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] < min) {
-                min = arr[i]; // update min if current element is smaller
-            }
+        int min = arr[0];
+        for (int i = 1; i < n; i++) {
+            if (arr[i] < min) min = arr[i];
         }
 
-        System.out.println("Minimum element is: " + min);
+        System.out.println("Minimum element: " + min);
     }
 }
